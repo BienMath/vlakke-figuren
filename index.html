@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vlakke figuren oefenen</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section id="startScreen" class="card start-card">
+      <div class="brand-row">
+        <div>
+          <h1>Vlakke figuren oefenen</h1>
+          <p class="lead">Oefen 15 figuren door elkaar. Typ de naam van het vlakke figuur.</p>
+        </div>
+      </div>
+      <button id="startBtn" class="primary big">Start oefening</button>
+    </section>
+
+    <section id="quizScreen" class="card quiz-card hidden">
+      <header class="quiz-header">
+        <div class="title-block">
+          <h1>Vlakke figuren oefenen</h1>
+          <div class="bar-wrap" aria-label="Voortgang">
+            <div class="progress soft"><div id="progressBar"></div></div>
+            <div class="caption" id="progressText">Vraag 1 van 15</div>
+          </div>
+          <div class="bar-wrap" aria-label="Score">
+            <div class="progress scorebar"><div id="scoreBarGreen"></div><div id="scoreBarOrange"></div><div id="scoreBarRed"></div></div>
+            <div class="caption" id="scoreText">Groen: 0 in één keer goed · Oranje: 0 na de tweede keer goed · Rood: 0 na twee pogingen fout</div>
+          </div>
+        </div>
+        <button id="restartBtn" class="ghost">Opnieuw</button>
+      </header>
+
+      <section class="work-area">
+        <div class="imageWrap">
+          <img id="figureImage" alt="Vlak figuur" />
+        </div>
+
+        <div class="answer-panel">
+          <form id="answerForm" autocomplete="off">
+            <label for="answerInput">Welk vlak figuur zie je hier?</label>
+            <div class="answerRow">
+              <input id="answerInput" type="text" placeholder="bijvoorbeeld gelijkbenige driehoek" autofocus />
+              <button class="primary" type="submit">Controleer</button>
+            </div>
+          </form>
+          <div id="feedback" class="feedback hidden" aria-live="polite"></div>
+          <button id="nextBtn" class="primary next hidden">Volgende</button>
+        </div>
+      </section>
+    </section>
+
+    <section id="endScreen" class="card end-card hidden">
+      <h1>Klaar!</h1>
+      <p id="finalMessage"></p>
+      <p id="finalScore" class="lead"></p>
+      <div class="end-bars">
+        <div class="progress soft"><div id="endProgressBar"></div></div>
+        <div class="caption">15 van 15 vragen gemaakt</div>
+        <div class="progress scorebar"><div id="endGreen"></div><div id="endOrange"></div><div id="endRed"></div></div>
+        <div class="caption" id="endScoreText"></div>
+      </div>
+      <div id="mistakesBox" class="mistakes hidden"></div>
+      <div class="buttonGroup">
+        <button id="retryMistakesBtn" class="primary hidden">Fouten oefenen</button>
+        <button id="newSessionBtn" class="ghost">Opnieuw oefenen</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
